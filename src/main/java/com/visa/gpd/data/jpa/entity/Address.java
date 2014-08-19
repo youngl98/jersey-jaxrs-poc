@@ -1,5 +1,7 @@
 package com.visa.gpd.data.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -51,6 +53,7 @@ public class Address extends AbstractEntity {
     this.zip = zip;
   }
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   public Consumer getConsumer() {
     return consumer;

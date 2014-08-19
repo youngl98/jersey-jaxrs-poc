@@ -34,6 +34,7 @@ public class ConsumerService {
     address.setCity("Foster City");
     address.setState("CA");
     address.setZip("94401");
+    address.setConsumer(consumer);
 
     List<Address> addresses= new ArrayList<Address>();
     addresses.add(address);
