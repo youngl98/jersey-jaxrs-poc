@@ -5,6 +5,7 @@ import com.visa.gpd.data.jpa.service.ConsumerService;
 import org.glassfish.jersey.message.internal.JerseyLink;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -36,6 +37,13 @@ public class ConsumerResource {
                    .link("/authentication/tc", "tc")
                    .build();
     //return consumerService.consumer();
+  }
+  @POST
+  @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+  @Produces(MediaType.APPLICATION_JSON)
+  public Consumer consumer1(Consumer consumer) {
+    System.out.println("consumer = " + consumer);
+    return consumerService.consumer1(consumer);
   }
 
   @GET

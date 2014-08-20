@@ -59,4 +59,13 @@ public class Consumer extends AbstractEntity {
   private String emailAddress;
   private List<Address> addresses = new ArrayList<Address>(0);
 
+  @Override
+  public String toString() {
+    return "Consumer{" +
+           "firstname='" + firstname + '\'' +
+           ", lastname='" + lastname + '\'' +
+           ", emailAddress='" + emailAddress + '\'' +
+           ", addresses=" + addresses +
+           '}';
+  }
 }

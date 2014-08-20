@@ -46,6 +46,16 @@ public class ConsumerService {
   }
 
   @Transactional
+  public Consumer consumer1(Consumer consumer) {
+    for (Address a : consumer.getAddresses()) {
+      a.setConsumer(consumer);
+    }
+    consumerRepository.save(consumer);
+    Consumer consumer1 = consumerRepository.findOne(consumer.getId());
+    return consumer1;
+  }
+
+  @Transactional
   public Consumer getconsumer(@PathParam("id") Long id) {
     Consumer consumer = consumerRepository.findOne(id);
     return consumer;

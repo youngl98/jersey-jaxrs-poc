@@ -68,4 +68,14 @@ public class Address extends AbstractEntity {
   private String state;
   private String zip;
   private Consumer consumer;
+
+  @Override
+  public String toString() {
+    return "Address{" +
+           "street='" + street + '\'' +
+           ", city='" + city + '\'' +
+           ", state='" + state + '\'' +
+           ", zip='" + zip + '\'' +
+           '}';
+  }
 }
