@@ -27,6 +27,14 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 /**
  * User: youngl
  * Date: 7/31/14
+ *
+ * This ComponentProvider implementation is registered with Jersey SPI extension mechanism and
+ * it’s responsible for bootstrapping Jersey 2 Spring integration. It makes Jersey skip JAX-RS
+ * life-cycle management for Spring components. Otherwise, Jersey would bind these classes to
+ * HK2 ServiceLocator with Jersey default scope without respecting the scope declared for the Spring component.
+ * This class also initializes HK2 spring-bridge and registers Spring @Autowired annotation handler
+ * with HK2 ServiceLocator. When being run outside of servlet context, a custom
+ * org.springframework.web.context.request.RequestScope implementation is configured to implement request scope for beans.
  */
 public class Spring4ComponentProvider implements ComponentProvider {
 

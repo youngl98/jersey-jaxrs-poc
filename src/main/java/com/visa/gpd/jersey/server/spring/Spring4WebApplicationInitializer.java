@@ -14,6 +14,9 @@ import javax.servlet.ServletException;
 /**
  * User: youngl
  * Date: 7/31/14
+ *
+ * A convenience class that helps the user avoid having to configure Spring ContextLoaderListener and
+ * RequestContextListener in web.xml. Alternatively the user can configure these in web application web.xml.
  */
 public class Spring4WebApplicationInitializer implements WebApplicationInitializer {
 

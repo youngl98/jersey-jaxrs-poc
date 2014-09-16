@@ -22,6 +22,9 @@ import org.springframework.core.MethodParameter;
 /**
  * User: youngl
  * Date: 7/31/14
+ *
+ * HK2 injection resolver that injects dependencies declared using Spring framework @Autowired annotation.
+ * HK2 invokes this resolver and asks it to resolve dependencies annotated using @Autowired.
  */
 @Singleton
 public class AutowiredInjectResolver implements InjectionResolver<Autowired> {

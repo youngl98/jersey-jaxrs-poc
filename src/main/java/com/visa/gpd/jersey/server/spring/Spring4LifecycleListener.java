@@ -11,6 +11,8 @@ import javax.ws.rs.ext.Provider;
 /**
  * User: youngl
  * Date: 7/31/14
+ *
+ * Handles container lifecycle events. Refreshes Spring context on reload and close it on shutdown.
  */
 //@Provider
 public class Spring4LifecycleListener implements ContainerLifecycleListener {
